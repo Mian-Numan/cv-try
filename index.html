@@ -16,6 +16,36 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <style>
+
+        /* Fixed Contact Button */
+        .contact-btn{
+            position:fixed;
+            bottom:20px;
+            right:20px;
+            z-index:999;
+            border-radius:50px;
+            padding:12px 25px;
+            font-size:18px;
+            font-weight:600;
+            box-shadow:0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Modal Header */
+        .modal-header{
+            background:var(--bs-orange);
+            color:white;
+        }
+
+        /* Form Styling */
+        .form-control{
+            border-radius:10px;
+        }
+
+        textarea{
+            resize:none;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -40,6 +70,90 @@
             </ul>
         </div>
     </nav>
+    <!-- Fixed Button -->
+    <button class="btn btn-primary contact-btn" data-bs-toggle="modal" data-bs-target="#contactModal">
+        Contact Me
+    </button>
+
+    <!-- Popup Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+
+                <!-- Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" style="color: white;">Contact Form</h4>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body">
+
+                    <form id="contactForm">
+
+                        <div class="row">
+
+                            <!-- First Name -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" placeholder="Enter first name" required>
+                            </div>
+
+                            <!-- Last Name -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" placeholder="Enter last name" required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" placeholder="Enter email" required>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" placeholder="Enter phone number" required>
+                            </div>
+
+                            <!-- City -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">City</label>
+                                <input type="text" class="form-control" placeholder="Enter city">
+                            </div>
+
+                            <!-- Address -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Address</label>
+                                <input type="text" class="form-control" placeholder="Enter address">
+                            </div>
+
+                            <!-- Requirement -->
+                            <div class="col-12 mb-3">
+                                <label class="form-label">Requirement</label>
+                                <textarea class="form-control" rows="4"
+                                    placeholder="Write your requirement..."></textarea>
+                            </div>
+
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary px-5" style="color: white;">
+                                Submit
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
     <!-- Page Content-->
     <div class="container-fluid p-0">
         <!-- About-->
@@ -92,7 +206,11 @@
                         <h3 class="mb-0">react-js Project</h3>
                         <div class="subheading mb-3">
                             TaskList </div>
-                        <p>Engineered a sleek and responsive to-do list app using React.js, featuring customizable themes for a personalized user experience. Implemented robust data storage by integrating a database to ensure seamless saving and retrieval of all tasks and user preferences, showcasing a practical full-stack approach.<a href="https://tourmaline-froyo-8d9128.netlify.app/ " target="_blank">Click here</a></p>
+                        <p>Engineered a sleek and responsive to-do list app using React.js, featuring customizable
+                            themes for a personalized user experience. Implemented robust data storage by integrating a
+                            database to ensure seamless saving and retrieval of all tasks and user preferences,
+                            showcasing a practical full-stack approach.<a
+                                href="https://tourmaline-froyo-8d9128.netlify.app/ " target="_blank">Click here</a></p>
                     </div>
                     <div class="flex-shrink-0"><span class="text-primary">on-working</span></div>
                 </div>
@@ -101,7 +219,11 @@
                         <h3 class="mb-0">Landing Page</h3>
                         <div class="subheading mb-3">
                             portfolio </div>
-                        <p>I developed a responsive landing page using HTML, CSS, JavaScript, and Bootstrap. Designed with a modern, mobile-first approach, it delivers a seamless experience across devices. The site features clean layouts, interactive elements, and smooth functionality — showcasing my skills in front-end development and responsive design.<a href="https://numanmushtaq-tech.github.io/assign13/" target="_blank">Click here</a></p>
+                        <p>I developed a responsive landing page using HTML, CSS, JavaScript, and Bootstrap. Designed
+                            with a modern, mobile-first approach, it delivers a seamless experience across devices. The
+                            site features clean layouts, interactive elements, and smooth functionality — showcasing my
+                            skills in front-end development and responsive design.<a
+                                href="https://numanmushtaq-tech.github.io/assign13/" target="_blank">Click here</a></p>
                     </div>
                     <div class="flex-shrink-0"><span class="text-primary">completed</span></div>
                 </div>
@@ -181,8 +303,14 @@
         <section class="resume-section" id="interests">
             <div class="resume-section-content">
                 <h2 class="mb-5">Interests</h2>
-                <p>Fueled by a deep passion for creating impactful web solutions, I'm a Full Stack Developer enthusiastic about the entire development lifecycle. The art of building intuitive front-ends with technologies like React.js, combined with crafting robust back-ends using Node.js and Express.js, truly excites me. I'm driven to build high-quality applications and constantly seek opportunities to expand my skillset in the ever-evolving world of web development.</p>
-                <p class="mb-0"> I am particularly drawn to opportunities that encourage continuous learning and the adoption of cutting-edge technologies, as I am passionate about staying at the forefront of the ever-evolving web development landscape.</p>
+                <p>Fueled by a deep passion for creating impactful web solutions, I'm a Full Stack Developer
+                    enthusiastic about the entire development lifecycle. The art of building intuitive front-ends with
+                    technologies like React.js, combined with crafting robust back-ends using Node.js and Express.js,
+                    truly excites me. I'm driven to build high-quality applications and constantly seek opportunities to
+                    expand my skillset in the ever-evolving world of web development.</p>
+                <p class="mb-0"> I am particularly drawn to opportunities that encourage continuous learning and the
+                    adoption of cutting-edge technologies, as I am passionate about staying at the forefront of the
+                    ever-evolving web development landscape.</p>
             </div>
         </section>
         <hr class="m-0" />
