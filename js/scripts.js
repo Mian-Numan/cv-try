@@ -32,3 +32,18 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+      // Form Submit Event
+        document.getElementById("contactForm").addEventListener("submit", function(e){
+
+            e.preventDefault();
+
+            alert("Your form has been submitted successfully!");
+
+            // Reset Form
+            this.reset();
+
+            // Close Modal
+            let modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+            modal.hide();
+
+        });
