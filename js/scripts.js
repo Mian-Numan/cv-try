@@ -1,11 +1,4 @@
-/*!
-* Start Bootstrap - Resume v7.0.6 (https://startbootstrap.com/theme/resume)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
+/
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -46,4 +39,38 @@ window.addEventListener('DOMContentLoaded', event => {
             let modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
             modal.hide();
 
+        });
+
+        const projects = {
+            1: {
+                title: "E-Commerce Platform",
+                image: "https://picsum.photos/id/1015/1200/800"
+            },
+            2: {
+                title: "AI Dashboard",
+                image: "https://picsum.photos/id/201/1200/800"
+            },
+            3: {
+                title: "Mobile Banking App",
+                image: "https://picsum.photos/id/237/1200/800"
+            }
+        };
+        
+        function showProjectModal(id) {
+            const project = projects[id];
+            if (!project) return;
+            
+            document.getElementById('modalTitle').textContent = project.title;
+            document.getElementById('modalImage').src = project.image;
+            
+            const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+            modal.show();
+        }
+        
+        // Optional: Keyboard support (ESC already handled by Bootstrap)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                const modal = bootstrap.Modal.getInstance(document.getElementById('projectModal'));
+                if (modal) modal.hide();
+            }
         });
